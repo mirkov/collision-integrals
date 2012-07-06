@@ -1,0 +1,180 @@
+2012-05-16  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* lj-collision-integral-table-interpolations.lisp
+	(with-verbose-table-interpolation): 
+	(omega*%-11, omega*%-12, omega*%-13, omega*%-14, omega*%-15)
+	(omega*%-22): Added error handling when t*
+	is outside of Ivchenko's table domain
+	(with-verbose-table-interpolation): Envornment for handling out-of
+	range T*
+
+2012-05-15  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-integrals.asd (:collision-integrals): module loading
+	dependency on module "package"
+
+2012-05-13  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-integrals-user.lisp (demo): Fixed spelling error
+
+	* omega-star-combinations.lisp: Added omega-* combination
+	functions A*, B*, C*, E* and F*
+
+2012-04-25  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-parameters.lisp (hard-sphere-collision-parameters):
+	Bug in class inheritance.  I had incorrectly specified
+	lennar-jones-6/12 instead of hard-sphere
+
+
+2011-10-16  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-parameters.lisp (make-collision-parameters): Fixed bug
+	in calculating sigma for same-species collisions.  It was twice as
+	large as it should have been
+
+	* omega-hs.lisp (omega-11-hs%): Modified numerical constants to
+	agree with (Ferziger & Kaper, 9.2-4)
+
+2011-09-15  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* omega-hs.lisp (omega-11-hs%): Changed argument units from SI to
+	amu angstrom
+
+2011-09-13  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-parameters.lisp (collision-parameters): Changed object
+	layout of collision parameters.  Work still in progress
+
+	* omega-gf+defaults.lisp (defomega-ij): Changed omega-ij-hs calls
+	to the ew object based omega-ij-hs calling convention
+
+	* omega-hs.lisp Complete rewrite of the file.  The omega-xy-hs are
+	now generic functions with one method that specializes on the
+	objects of the hard-sphere-potential class.  With two helper
+	fuctions, a macro is used to ease the definition of the generic
+	functions and their methods.
+
+2011-09-11  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-parameters.lisp
+	(make-lennard-jones-6/12-collision-parameters): Changed code to
+	use the potential objects from `molecular-potentials' to retreive
+	potential parameters
+
+	* collision-integrals.asd (:collision-integrals): Added file
+	`collision-parameters' to the system
+
+2011-09-10  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* omega-gf+defaults.lisp (:omega-xx): Changing collision integrals
+	to depend not on molecular potentials, but on collision
+	parameters, which can be different from the molecular potentials.
+	This will require a revamp of part of the system, and also a
+	change to molecular-potentials system.
+
+	* doc/collision-integrals-cl-package.org: Fixing argument order:
+	mass, temperature, rest in documentation and code.
+
+	* omega-hs.lisp: Fixed multiple bugs introduced by the change in
+	parameter oredring from temperature mass sigma to mass temperature
+	sigma.  The bug was detected by unit test failures
+
+2011-09-06  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* lj-collision-integral-fits.lisp (omega*%-11, omega*%-22): Fixed
+	typos in arguments due to change in naming convenction
+
+	* omega-gf+defaults.lisp (defomega-ij): Verified definition of
+	`omega-ij' as `omega*-ij * omega-ij-hs'
+
+	* lj-default-methods.lisp (default-omega*-lj-calc-method)
+	(set-default-omega*-lj-calc-method): Changed argument name from
+	`reduced-collision-integral' to omega*.  Improved error handling
+	with assert.  The code offers the user to input a different
+	omega*.
+
+2011-09-05  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-integrals.asd (:collision-integrals): Factored out
+	package setup into own module
+
+2011-09-04  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* setup-default-methods.lisp (default-omega-calc-method)
+	(set-default-omega-calc-method): Renamed arguments to be more
+	descriptive
+
+	* collision-integrals.asd (:collision-integrals-user): Added
+	collision-integrals-user definition.  Commented out
+	hard-sphere-coeffs as I will use only the diameter to signal a
+	hard-sphere collision model.
+
+2011-08-31  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* general-collision-integrals.lisp: Removed the `export' statement
+	moving all the exports into the package definition.  Modified
+	general collision integrals from functions into generic functions,
+	modified calling definitions and added documentations to generic
+	functions
+
+	* lj-collision-integral-table-interpolations.lisp: Removed the
+	`export' statement moving all the exports into the package
+	definition.  Renamed the methods according to current naming
+	convention.  Changed argument specializers to new convention.
+
+	* lj-collision-integral-fits.lisp: Removed the `export' statement
+	moving all the exports into the package definition.  Major
+	reorganization of the class structure and provided functionality.
+	We now generate and export special variables that encapsulate the
+	fits, and trigger the execution of appropriate methods.
+
+	* hard-sphere-coeffs.lisp: Removed the `export' statement moving
+	all the exports into the package definition.
+
+	* hs-collision-integrals.lisp: Removed the `export' statement
+	moving all the exports into the package definition.  Fixed the
+	function names to the new naming convention.
+
+	* setup-explicit-and-default-functions.lisp: Removed the `export'
+	statement moving all the exports into the package definition.
+	Renamed the reduced integral methods with specified model from %
+	into *%.  Other edits to conform with new naming conventions.
+
+	* collision-integrals-package-def.lisp (:collision-integrals):
+	Moved all exported variables into this file and added documenting
+	comments
+
+	* lj-collision-integral-table-interpolations.lisp
+	(*data-directory*): Set value to asdf system directory
+
+	* collision-integrals.asd (:collision-integrals): Removed
+	lennard-jones-coeffs.lisp into their own package,
+	molecular-potentials
+
+2011-08-30  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* hs-collision-integrals.lisp (omega-11%, omega-12%, omega-13%)
+	(omega-14%, omega-15%, omega-22%): Changed the qualifier from
+	:hs-11, :hs-12, ... etc into :hs.  Also changed return value to
+	1.0 since omega-LS% return the reduced integrals
+
+
+	* general-collision-integrals.lisp: New file with functions
+	`omega-xx', and exporting all the functions
+
+	* collision-integrals.asd (:collision-integrals): Added dependency
+	on `general-collision-integrals.lisp'
+
+	* collision-integrals/assign-collision-integral-default-methods.lisp (tabulated-omega*):
+	Made changes to conform to renaming of entries in *omega-calc-defaults*
+
+	* collision-integrals/setup-default-methods.lisp
+	(*omega-calc-defaults*): Renamed alist entries to omega*-xy
+
+	* collision-integrals/lj-collision-integral-table-interpolations.lisp
+	(*omega*-table*): Added special variable to hold the interpolation
+	table.  This makes it easier to specify table interpolation as a
+	calculation method
+	(*omega*-table*): Added variable to list of exported symbols
+

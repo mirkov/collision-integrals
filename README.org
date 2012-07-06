@@ -1,0 +1,16 @@
+Collision integrals
+
+Package for calculating intermolecular collision integrals used in
+transport coefficient calculations of low pressure gases.
+
+Package offers
+- Collision integrals for hard-sphere collisions
+- Reduced collision integrals for the 6-12 Lennard-Jones potential.
+  Multiple methods are offered:
+  - Analytic expressions for Omega-11* and Omega22*
+  - Interpolation of tables by Ivchenko et al
+- Mechanism for choosing the default calculation method or to use a
+  specific calculation method.
+- Certain combinations of the reduced \Omega integrals, A^*, B^*, C^*, E^*, and
+  F^*
+
