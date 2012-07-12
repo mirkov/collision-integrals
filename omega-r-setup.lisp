@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2011-09-05 21:51:47 omega-r-setup.lisp>
+;; Time-stamp: <2012-07-11 18:09:09 omega-r-setup.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -69,10 +69,23 @@ If model is specified as `t', use default model")
 (defomega*-ij 1 4)
 (defomega*-ij 1 5)
 (defomega*-ij 2 2)
+(defomega*-ij 2 3)
+(defomega*-ij 2 4)
+(defomega*-ij 2 5)
+(defomega*-ij 2 6)
+(defomega*-ij 3 3)
+(defomega*-ij 4 4)
 
-(setf *omega*-11-default* *omega*-table*
-      *omega*-12-default* *omega*-table*
-      *omega*-13-default* *omega*-table*
-      *omega*-14-default* *omega*-table*
-      *omega*-15-default* *omega*-table*
-      *omega*-22-default* *omega*-table*)
+(setf *omega*-11-default* *omega*-table-1*
+      *omega*-12-default* *omega*-table-1*
+      *omega*-13-default* *omega*-table-1*
+      *omega*-14-default* *omega*-table-1*
+      *omega*-15-default* *omega*-table-1*
+      *omega*-22-default* *omega*-table-1*
+      *omega*-23-default* *omega*-table-2*
+      *omega*-24-default* *omega*-table-2*
+      *omega*-25-default* *omega*-table-2*
+      *omega*-26-default* *omega*-table-2*
+      *omega*-33-default* *omega*-table-2*
+      *omega*-44-default* *omega*-table-2*
+      )

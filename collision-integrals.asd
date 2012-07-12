@@ -45,11 +45,14 @@
 	       :physics-constants))
 
 (asdf:defsystem :collision-integrals-user
+  :serial t
   :components ((:file "collision-integrals-user-package-def")
-	       (:file "collision-integrals-user"
-		      :depends-on ("collision-integrals-user-package-def")))
+	       (:file "collision-integrals-user")
+	       (:file "omega-plots"))
   :depends-on (:collision-integrals
 	       :molecular-potentials
 	       :periodic-table
 	       :physics-constants
-	       :lisp-unit))
+	       :lisp-unit
+	       :mv-grid-utils
+	       :mv-gnuplot))

@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2011-10-17 13:15:29 collision-integrals-package-def.lisp>
+;; Time-stamp: <2012-07-11 17:48:13 collision-integrals-package-def.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -43,6 +43,7 @@ For documentation and syntax, see the html file in the doc directory.")
    ;; as function of reduced temperature T*, calculated using the
    ;; default methods stored in *omega*-calc-defaults*
    :omega*-11 :omega*-12 :omega*-13 :omega*-14 :omega*-15 :omega*-22
+   :omega*-23 :omega*-24 :omega*-25 :omega*-26 :omega*-33 :omega*-44
    ;; Reduced collision integrals for the Lennard-Jones 6-12 potential
    ;; as function of reduced temperature T* (passed as second
    ;; argument), calculated using the method passed as first argument.

@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2011-09-10 22:55:22 collision-integrals-user-package-def.lisp>
+;; Time-stamp: <2012-07-11 17:33:28 collision-integrals-user-package-def.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -18,7 +18,9 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (defpackage :collision-integrals-user
-  (:use :cl :collision-integrals :molecular-potentials :elements :lisp-unit)
+  (:nicknames :ciu)
+  (:use :cl :collision-integrals :molecular-potentials :elements :lisp-unit :mv-gnuplot
+	:mv-grid)
   (:documentation "Template package for using collision integrals and testing the user interface"))
 
 (in-package :collision-integrals-user)

@@ -1,3 +1,52 @@
+2012-07-11  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* omega-r-setup.lisp: Added calls to initialize Omega* for table
+	1B of Ivchenko et al
+	(setf) : Modified setf to initialize defaults to Omega* from table
+	1b of Ivchenko et al.
+
+	* lj-collision-integral-table-interpolations.lisp (+t*-min+)
+	(+t*-max+): Changed to double float
+	(omega*-table): Removed column-alist initialization from class
+	specifiation to the instantiation
+	(make-omega*-table): Changed calling interface, added function
+	documentation, and made the object documentation more descriptive
+	(*omega*-table-1*) (*omega*-table-2*): Changed from variable into
+	parameters.  Improved documentation
+	(omega*%-11, omega*%-12, omega*%-13, omega*%-14, omega*%-15)
+	(omega*%-22): Changed specializer from obsolete *omega*-table* to
+	*omega*-table-1*
+	(omega*%-23, omega*%-24, omega*%-25, omega*%-26, omega*%-33)
+	(omega*%-44): Added new functions that use *omega*-table-2*
+
+	* collision-integrals.asd (:collision-integrals-user): Added
+	dependency on mv-gnuplot and mv-grid-utils (it will be loaded by
+	collision-integrals, but I add it here as documentation)
+	(:collision-integrals-user): Added omega-plots component
+
+	* collision-integrals-user-package-def.lisp
+	(:collision-integrals-user): Added new use packages mv-gnuplot and
+	mv-grid
+
+	* collision-integrals-package-def.lisp (:collision-integrals):
+	Added Omega integrals from table 2b to list of exported symbols
+
+	* omega-plots.lisp (plot-interpolations): Added new file that
+	verifies reading and interpolation of Omega* tables by plotting
+	tabulated and interpolated values
+
+	* lj-collision-integral-table-interpolations.lisp: Added
+	definitions of omega* functions stored in table F1b.  This
+	necessitated changes documented next.
+
+2012-07-06  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* lj-collision-integral-table-interpolations.lisp
+	(make-omega*-table): Changed interface.  It now has one required
+	argument, the file
+	(*omega*-table-1*, *omega*-table-2*): Instead of *omega*-table*, I
+	now have two variables, each storing one table
+
 2012-05-16  Mirko Vukovic  <mirko.vukovic@us.tel.com>
 
 	* lj-collision-integral-table-interpolations.lisp
