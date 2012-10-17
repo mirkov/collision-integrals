@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2012-04-25 15:41:45 collision-parameters.lisp>
+;; Time-stamp: <2012-07-13 16:07:21 collision-parameters.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -18,7 +18,6 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (in-package :omega-xx)
-
 
 ;; We create collision parameters from molecular potentials using
 ;; combination rules

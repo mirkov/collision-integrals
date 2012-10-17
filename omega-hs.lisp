@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2011-10-17 10:01:14 omega-hs.lisp>
+;; Time-stamp: <2012-07-13 14:44:08 omega-hs.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -27,7 +27,7 @@
 	      (* 2.d0 +amu+)))
      (^2 1d-10))
   "Constant that figures in the hard-sphere collision integral 
-(Ferziger & Peric, 7.1-28)")
+ (Ferziger & Peric, 7.1-28)")
 
 ;; we start out with the general scaling for hard-sphere collisions
 ;; and the formula for the 11 collision integrals.  These two are used
