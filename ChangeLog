@@ -1,3 +1,13 @@
+2013-04-07  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* collision-integrals-package-def.lisp (:collision-integrals):
+	Exporting *omega*-table-1* and *omega*-table-2* instead of
+	*omega*-table*
+
+	* collision-parameters.lisp
+	(make-lennard-jones-6/12-collision-parameters): Relaxed test
+	criterion to 1e-6
+
 2012-07-11  Mirko Vukovic  <mirko.vukovic@us.tel.com>
 
 	* omega-r-setup.lisp: Added calls to initialize Omega* for table

@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2012-07-11 17:48:13 collision-integrals-package-def.lisp>
+;; Time-stamp: <2013-04-07 22:14:39Eastern Daylight Time collision-integrals-package-def.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -73,7 +73,7 @@ For documentation and syntax, see the html file in the doc directory.")
    ;; Omega integrals are extensively tabulated by Ivchenko et al.
    ;; The following variable holds the object with the table.  It also
    ;; triggers interpolation to obtain the desired values.
-   :*omega*-table*
+   :*omega*-table-1* :*omega*-table-2*
    :make-collision-parameters :mass :sigma :epsilon/K))
 
 

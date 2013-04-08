@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2012-07-13 16:07:21 collision-parameters.lisp>
+;; Time-stamp: <2013-04-07 22:03:28Eastern Daylight Time collision-parameters.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -173,9 +173,10 @@ argument2: ~a" (class-name c1) (class-name c2)))))
 	 (p2 (make-species-lennard-jones-6/12-potential :Y))
 	 (lj-coeffs (make-collision-parameters p1 p2)))
     (describe lj-coeffs)
-    (assert-number-equal (/ 2.0 3.0) (mass lj-coeffs))
-    (assert-number-equal 2.5 (sigma lj-coeffs))
-    (assert-number-equal (sqrt 20.0) (epsilon/k lj-coeffs))))
+    (let ((lisp-unit:*epsilon* 1e-6))
+      (assert-number-equal (/ 2.0 3.0) (mass lj-coeffs))
+      (assert-number-equal 2.5 (sigma lj-coeffs))
+      (assert-number-equal (sqrt 20.0) (epsilon/k lj-coeffs)))))
 
 #|
 (defgeneric make-collision-parameters (species1 species2)

@@ -1,5 +1,5 @@
 ;; Mirko Vukovic
-;; Time-stamp: <2012-07-12 09:02:04 lj-collision-integral-table-interpolations.lisp>
+;; Time-stamp: <2012-10-27 23:06:30Eastern Daylight Time lj-collision-integral-table-interpolations.lisp>
 ;; 
 ;; Copyright 2011 Mirko Vukovic
 ;; Distributed under the terms of the GNU General Public License
@@ -75,7 +75,7 @@ COLUMN-ALIST is a list contains a dictionary of Omega indices and table columns.
 
 Here X? and Y? are the indices of the Omega integral and Z? is the column index.  In these tables
 Z? is between 1 and 6.  Column 0 contains T*"
-  (let* ((mv-grid::*array-type* 'grid::foreign-array)
+  (let* ((mv-grid::*default-grid-type* 'grid::foreign-array)
 	 (file (format nil "Ivchenko-~a.dat" table-id))
 	 (table (make-instance 'omega*-table :data
 			       (read-omega*-table file)
